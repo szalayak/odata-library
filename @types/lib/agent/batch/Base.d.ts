@@ -15,16 +15,16 @@ declare class Base {
      * @param {String} boundaryPrefix the boundary prefix for the
      * 		  multipart content of the batch request
      *
-     * @private
+     * @protected
      * @memberof Base
      */
-    private constructor();
+    protected constructor();
     /**
      * Add new item to the batch list object
      *
      * @param {Class} BatchObject class definition for newly created object
      *
-     * @returns {Object} create instance of the BatchObject class
+     * @returns {BatchObject} create instance of the BatchObject class
      *
      * @private
      * @memberof Base

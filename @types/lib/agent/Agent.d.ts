@@ -173,11 +173,11 @@ declare class Agent {
      *
      * @param {String} inputUrl relative path in the service
      *
-     * @returns {Promise} which done where token has loaded
+     * @returns {Promise<string>} which done where token has loaded
      *
      * @memberof Agent
      */
-    fetchToken(): Promise<any>;
+    fetchToken(): Promise<string>;
     /**
      * Send batch request defined by the batch object passed as parameter
      *

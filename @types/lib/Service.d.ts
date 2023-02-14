@@ -38,30 +38,30 @@ declare class Service {
      * @param {Agent} agent - instance of the agent which handler HTTP requests
      * @param {Metadata} metadata - instance of the metadata object which keep serviice metadata
      *
-     * @return {Object}  returns map which contains EntitySets instances
+     * @return {Record<string,EntitySet>}  returns map which contains EntitySets instances
      *
      * @memberof Service
      */
-    buildEntitySets(agent: Agent, metadata: Metadata): any;
+    buildEntitySets(agent: Agent, metadata: Metadata): Record<string, EntitySet>;
     /**
      * Creates Object with OData FunctionImport wrappers
      *
      * @param {Agent} agent - instance of the agent which handler HTTP requests
      * @param {Metadata} metadata - instance of the metadata object which keep serviice metadata
      *
-     * @return {Object}  returns map which contains EntitySets instances
+     * @return {Record<string,FunctionImport>}  returns map which contains EntitySets instances
      *
      * @memberof Service
      */
-    buildFunctionImports(agent: Agent, metadata: Metadata): any;
+    buildFunctionImports(agent: Agent, metadata: Metadata): Record<string, FunctionImport>;
     /**
      * Create batch and register it to the agent's batch manager
      *
-     * @returns {Object} batch object which represents batch request
+     * @returns {Batch} batch object which represents batch request
      *
      * @memberof Service
      */
-    createBatch(): any;
+    createBatch(): Batch;
     /**
      * Sends batch passed as parameter or default batch from agents batch manager
      *
@@ -99,6 +99,8 @@ declare class Service {
 }
 import Agent = require("./agent/Agent");
 import Metadata = require("./model/Metadata");
+import EntitySet = require("./engine/EntitySet");
+import FunctionImport = require("./engine/FunctionImport");
 import Batch = require("./agent/batch/Batch");
 import ChangeSet = require("./agent/batch/ChangeSet");
 //# sourceMappingURL=Service.d.ts.map

@@ -16,18 +16,18 @@ declare class Manager extends Base {
     /**
      * Add new batch object to the list of the batches
      *
-     * @return {Object} newly created the batch object which represents future batch request
+     * @return {Batch} newly created the batch object which represents future batch request
      *
      * @public
      * @memberof Manager
      */
-    public add(): any;
+    public add(): Batch;
     /**
      * Remove batch from the currently registered batch objects
      *
      * @param {Object} batch object for remove
      *
-     * @return {Object} removed batch object
+     * @return {Batch} removed batch object
      *
      * @private
      * @memberof Manager
@@ -56,8 +56,24 @@ declare class Manager extends Base {
      * @memberof Manager
      */
     public indexOf(batch: Batch): number;
-    get defaultBatch(): any;
-    get defaultChangeSet(): any;
+    /**
+     * Return the default batch
+     *
+     * @return {Batch} the default batch
+     *
+     * @public
+     * @memberof Manager
+     */
+    public get defaultBatch(): Batch;
+    /**
+   * Return the default changeset
+   *
+   * @return {ChangeSet} the default batch
+   *
+   * @public
+   * @memberof Manager
+   */
+    public get defaultChangeSet(): ChangeSet;
 }
 import Base = require("./Base");
 import Batch = require("./Batch");
